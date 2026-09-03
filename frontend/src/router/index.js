@@ -6,6 +6,9 @@ import RequisitionDetailPage from '../pages/RequisitionDetailPage.vue';
 import POCreatePageNew from '../pages/POCreatePageNew.vue';
 import POListPage from '../pages/POListPage.vue';
 import PODetailPage from '../pages/PODetailPage.vue';
+import GoodsReceiptCreatePage from '../pages/GoodsReceiptCreatePage.vue';
+import GoodsReceiptListPage from '../pages/GoodsReceiptListPage.vue';
+import GoodsReceiptDetailPage from '../pages/GoodsReceiptDetailPage.vue';
 const routes = [
   { path: '/', name: 'dashboard', component: DashboardPage },
   { path: '/requisitions', name: 'requisitions-list', component: RequisitionListPage },
@@ -26,6 +29,22 @@ const routes = [
   path: '/po-create',
   name: 'POCreate',
   component: POCreatePageNew,
+  },
+  {
+    path: '/goods-receipts',
+    name: 'goods-receipts-list',
+    component: GoodsReceiptListPage,
+  },
+  {
+    path: '/goods-receipts/new',
+    name: 'goods-receipts-create',
+    component: GoodsReceiptCreatePage,
+  },
+  {
+    path: '/goods-receipts/:id',
+    name: 'goods-receipts-detail',
+    component: GoodsReceiptDetailPage,
+    props: true,
 }
 ];
 
