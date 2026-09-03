@@ -17,8 +17,17 @@
   background: var(--bg);
 }
 
+:root.dark-mode {
+  --bg: #17151a;
+  --white: #242127;
+  --text: #f5f1f3;
+  --text-muted: #b8adb3;
+  --border: #494149;
+  --table-header: #302b32;
+}
+
 * { box-sizing: border-box; }
-body { margin: 0; }
+body { margin: 0; background: var(--bg); }
 a { color: var(--primary); text-decoration: none; }
 
 /* ===== Layout ===== */
@@ -70,6 +79,30 @@ a { color: var(--primary); text-decoration: none; }
 .navbar nav a.active {
   background: var(--primary);
   color: var(--white);
+}
+
+:root.dark-mode .navbar nav a.active,
+:root.dark-mode .back-btn,
+:root.dark-mode .stat-card,
+:root.dark-mode .btn-primary {
+  color: #ffffff;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 /* ===== Main content ===== */
@@ -333,6 +366,9 @@ td a {
 .status-badge.draft { background: #f3f3f3; color: #888; }
 .status-badge.submitted { background: #fff3e0; color: #e65100; }
 .status-badge.approved { background: #e8f5e9; color: #2e7d32; }
+:root.dark-mode .status-badge.draft { background: #3d3840; color: #d1c7cd; }
+:root.dark-mode .status-badge.submitted { background: #4a3422; color: #ffb36b; }
+:root.dark-mode .status-badge.approved { background: #23402c; color: #9cdaa7; }
 
 /* ===== Utility ===== */
 .muted { color: var(--text-muted); font-size: 13px; }
